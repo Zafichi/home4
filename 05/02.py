@@ -1,9 +1,10 @@
 def fun(*args, **kwargs):
-    for key in kwargs.keys():
-        if kwargs[key] == args:
+    for i in kwargs.values():
+        if i == args[0]:
             print(True)
-        else:
-            print(False)
+            break
+    else:
+        print(False)
 
 
-fun(5, foo=5, bar=8)
+fun(5, foo=5, bar=9)
