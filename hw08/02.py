@@ -42,7 +42,7 @@ class Department:
         return dep
 
     def __or__(self, other):
-        return self.name if self.get_budget_plan() >= other.get_budget_plan() else other.name
+        return self if self.get_budget_plan() >= other.get_budget_plan() else other
 
 
 department_1 = Department('Football', {'Alex': 1200, 'Pavel': 2500, 'Inna': 1800}, 12000)
@@ -51,5 +51,5 @@ department_3 = Department('Tennis', {'Patric': 2400, 'Spirit': 1200, 'Linda': 33
 new_department = department_1 + department_2
 print(new_department)
 print(department_1.merge_departments(department_2, department_3))
-print(department_1 | department_2)
+print(department_3 | department_2)
 
