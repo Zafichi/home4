@@ -4,8 +4,8 @@ from dataclasses import dataclass, field
 
 @dataclass(order=True)
 class Student:
-    name: str = field(compare=False)
-    average_mark: float
+    name: str = field(default=None, compare=False)
+    average_mark: float = field(default=None)
     subjects: typing.List[str] = field(default_factory=list, repr=False, compare=False)
     age: int = field(default=18, repr=False, compare=False)
 
@@ -15,12 +15,12 @@ class Student:
         else:
             self.first_letter = None
 
-    def sorted_students(self, *args):
-        lst_of_students = [self]
-        for i in args:
-            lst_of_students.append(i)
-        lst_of_students.sort()
-        return lst_of_students
+
+def lst_creator(*args):
+    lst = []
+    for i in args:
+        lst.append(i)
+    return lst
 
 
 student_1 = Student('Alex', 7.56, ['Math', 'PE', 'Chemical'], 21)
@@ -31,4 +31,6 @@ student_5 = Student('Lukas', 9.23, ['Math', 'PE', 'Economics'], 21)
 student_6 = Student('Iron', 6.66, ['Geography', 'PE', 'Chemical'], 22)
 print(student_1)
 print(student_2 < student_1)
-print(student_1.sorted_students(student_2, student_3, student_4, student_5, student_6))
+lst_of_students = lst_creator(student_1, student_2, student_3, student_4, student_5, student_6)
+print(sorted(lst_of_students))
+
