@@ -22,3 +22,15 @@ class Task1C(Task1B, Task1D):
 class Task1E(Task1D):
     def __init__(self):
         super().__init__()
+
+
+a = Task1A
+print(a.x)
+b = Task1B
+print(b.x)
+c = Task1C
+print(c.x)
+d = Task1D
+print(d.x)
+e = Task1E
+print(e.x)
