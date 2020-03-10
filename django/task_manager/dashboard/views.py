@@ -2,12 +2,13 @@ from django import http, urls
 from django import template
 from django import shortcuts
 from django.views import generic
+from django.shortcuts import render
 
 from dashboard import models
 
 
-def simple_view(request):
-    return http.HttpResponse('<h1>Hello, world!</h1>')
+# def simple_view(request):
+#     return http.HttpResponse('<h1>Hello, world!</h1>')
 
 
 def dynamic_template_view(request, page):
@@ -60,5 +61,5 @@ class ProjectDeleteView(generic.DeleteView):
     template_name = 'project_delete.html'
 
 
-class SolarSystemView(generic.TemplateView):
-    template_name = 'solar-system.html'
+def index(request):
+    return render(request, "index.html")

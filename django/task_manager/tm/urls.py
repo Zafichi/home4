@@ -1,9 +1,12 @@
 from django.urls import path
 from django.contrib import admin
+# from authentication import views as auth_views
 from dashboard import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index),
     path(
         'projects/',
         views.ProjectListView.as_view(),
@@ -29,9 +32,16 @@ urlpatterns = [
         views.ProjectDeleteView.as_view(),
         name='projects-delete'
     ),
-    path(
-        'solar-system',
-        views.SolarSystemView.as_view(),
-        name='solar-system',
-    ),
 ]
+    # auth
+#     path(
+#         'login/',
+#         auth_views.LoginView.as_view(),
+#         name='login',
+#     ),
+#     path(
+#         'logout/',
+#         auth_views.LogoutView.as_view(),
+#         name='logout',
+#     ),
+# ]
