@@ -1,0 +1,11 @@
+created_at,name,description,deadline,executor_id,reported_id
+,First,first steps,2020-04-25,35,14
+,Second,some fix from first steps,2020-05-02,22,20
+,Third,some new feathes,2020-05-21,12,36
+,Fourth,major fixes,2020-06-11,45,11
+,Fifth,start betta,2020-06-15,8,52
+,Sixth,hotfix,2020-06-18,51,10
+,Seventh,realese,2020-06-25,27,51
+,Eighth,try new feathes,2020-07-01,33,6
+,Ninth,hotfix,2020-07-14,6,47
+,Tens,finish,2020-07-27,19,3
